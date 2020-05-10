@@ -1,0 +1,63 @@
+<!-- BookModal -->
+  <div aria-hidden="true" aria-labelledby="bookModalLabel" class="modal fade" id="bookModal"
+       role="dialog" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="bookModalLabel">Book Properties</h5>
+          <button (click)="gotoBooks()" aria-label="Close" class="close" data-dismiss="modal" type="button">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form [formGroup]="BOOK_FORM" (ngSubmit)="onSubmit()" >
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="bookTitle">Title</label>
+                <input class="form-control" formControlName="title" id="bookTitle" name="bookTitle" type="text">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="bookAuthor">Author</label>
+                <input class="form-control" formControlName="author" id="bookAuthor" name="bookAuthor" type="text">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="bookShortDescription">Short Description</label>
+              <textarea class="form-control" formControlName="shortDescription" id="bookShortDescription" name="bookShortDescription"></textarea>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="bookCity">City</label>
+                <input class="form-control" formControlName="city" id="bookCity" name="bookCity" type="text">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="bookPrice">Price</label>
+                <input class="form-control" formControlName="price" id="bookPrice" name="bookPrice" step="0.01" type="number">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="bookPublisher">Publisher</label>
+                <input class="form-control" formControlName="publisher" id="bookPublisher" name="bookPublisher" type="text">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="bookYear">Year</label>
+                <input class="form-control" formControlName="year" id="bookYear" name="bookYear" type="text">
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button (click)="gotoBooks()" class="btn btn-outline-secondary" data-dismiss="modal" type="button">Close
+          </button>
+          <button (click)="saveBook()" class="btn btn-outline-primary" data-dismiss="modal"
+                  data-target="#successAlert" type="button">Save changes
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+

@@ -1,0 +1,36 @@
+<!-- BookModal -->
+<div aria-hidden="true" aria-labelledby="bookModalLabel" class="modal fade" id="registerModal"
+     role="dialog" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="bookModalLabel">Please login into your account!</h5>
+        <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form >
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="username">Username</label>
+              <input class="form-control" formControlName="username" id="username" name="username" type="text">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="password">Password</label>
+              <input class="form-control" formControlName="password" id="password" name="password" type="password">
+            </div>
+          </div>
+        </form>
+        <button class="btn btn-outline-primary center" data-dismiss="modal"
+                data-target="#successAlert" type="button">Login
+        </button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+

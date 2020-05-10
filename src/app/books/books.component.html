@@ -1,0 +1,42 @@
+<div *ngIf="PAGE" class="container-fluid">
+  <!--Book Card Render-->
+  <div class="card-columns">
+    <div>
+      <p *ngIf="PAGE.totalElements == 0"> No books in our Bookstore :(</p>
+    </div>
+    <div *ngFor="let book of PAGE.content" class="card border-primary mb-3" data-target="#bookModal" data-toggle="modal"
+         data-keyboard="false" data-backdrop="static">
+      <blockquote (click)="setSelectedBook(book)" class="blockquote mb-0 card-body">
+        <h5 class="card-header bg-transparent border-primary">{{book.title}}</h5>
+        <p class="card-body text-primary">{{book.shortDescription}}</p>
+        <footer class="card-footer bg-transparent border-primary blockquote-footer">
+          <small class="text-muted">Author {{book.author}}</small>
+        </footer>
+      </blockquote>
+    </div>
+  </div>
+  <!--Page Navigation-->
+  <div>
+    <nav aria-label="Page navigation">
+      <ul class="pagination justify-content-center">
+        <li *ngIf="PAGE.first" class="page-item disabled">
+          <a class="page-link" (click)="previousPage()" tabindex="-1">Previous</a>
+        </li>
+        <li *ngIf="!PAGE.first" class="page-item">
+          <a class="page-link" (click)="previousPage()" tabindex="-1">Previous</a>
+        </li>
+        <li *ngIf="PAGE.last" class="page-item disabled">
+          <a class="page-link" (click)="nextPage()">Next</a>
+        </li>
+        <li *ngIf="!PAGE.last" class="page-item">
+          <a class="page-link" (click)="nextPage()">Next</a>
+        </li>
+
+      </ul>
+    </nav>
+  </div>
+</div>
+
+
+
+
