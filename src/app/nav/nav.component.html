@@ -2,13 +2,31 @@
   <nav>
     <div class="menubar">
       <a class="home" (click)="toggleMenu()">
-        <img alt="travel-it-logo" src="assets/img/logo.png" width="50" height="50">{{ appTitle }}
+        <img alt="travel-it-logo" src="../../assets/img/animated-logo.gif" width="100" height="80">{{ appTitle }}
       </a>
+      <div class="button">
+        <a class="link" routerLink="/">Home</a>
+      </div>
       <div class="button" *ngIf="getUser() == null">
         <a class="link" routerLink="/register">Sing Up</a>
       </div>
       <div class="button" *ngIf="getUser() == null">
         <a class="link" routerLink="/login">Login</a>
+      </div>
+      <div class="button" *ngIf="getUser() != null">
+        <a class="link" routerLink="/about-us">About us</a>
+      </div>
+      <div class="button" *ngIf="getUser() != null">
+        <a class="link" routerLink="/countries">Destinations</a>
+      </div>
+      <div class="button" *ngIf="getUser() != null">
+        <a class="link" routerLink="/users">Top Users</a>
+      </div>
+      <div class="button" *ngIf="getUser() != null">
+        <a class="link" routerLink="/contact">Contact</a>
+      </div>
+      <div class="button" *ngIf="getUser() != null">
+        <a class="link" routerLink="/account">Account</a>
       </div>
       <div class="button" *ngIf="getUser() != null">
         <a class="link" (click)="logOut()">Logout</a>

@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {UserDataService} from "../api/user-data.service";
+import {UserDataService} from '../api/user-data.service';
 
 @Component({
   selector: 'app-users',
@@ -8,7 +8,7 @@ import {UserDataService} from "../api/user-data.service";
 })
 export class UsersComponent implements OnInit {
 
-  private users: User[] = [];
+  users: User[] = [];
 
   constructor(private userDataService: UserDataService) {
   }

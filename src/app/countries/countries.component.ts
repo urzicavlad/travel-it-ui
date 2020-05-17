@@ -1,21 +1,19 @@
 import {Component, OnInit} from '@angular/core';
 import {CountryDataService} from '../api/country-data.service';
 import {Router} from '@angular/router';
-import {CountryDetailsComponent} from '../country-details/country-details.component';
 
 @Component({
-  selector: 'app-books',
+  selector: 'app-countries',
   templateUrl: './countries.component.html',
   styleUrls: ['./countries.component.scss']
 })
 export class CountriesComponent implements OnInit {
 
-  private PAGE_REQUEST: PageRequest = {page: 0, size: 9, sortBy: '', sortStrategy: ''};
+  private PAGE_REQUEST: PageRequest = {page: 0, size: 3, sortBy: '', sortStrategy: ''};
   private SELECTED_COUNTRY: Country;
   PAGE: Page<Country>;
 
   constructor(private countryDataService: CountryDataService,
-              private countryDetailsComponent: CountryDetailsComponent,
               private router: Router) {
   }
 
