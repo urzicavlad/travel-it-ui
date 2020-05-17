@@ -5,24 +5,22 @@ import {HttpClientModule} from '@angular/common/http';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {NavComponent} from './nav/nav.component';
-import {BooksComponent} from './books/books.component';
-import {HomeComponent} from './home/home.component';
 import {UsersComponent} from './users/users.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {BookDetailsComponent} from './book-details/book-details.component';
-import { BookCreateComponent } from './book-create/book-create.component';
 import { RegisterComponent } from './register/register.component';
+import {CountriesComponent} from './countries/countries.component';
+import {CountryDetailsComponent} from './country-details/country-details.component';
+import {LoginComponent} from './login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
-    BooksComponent,
-    HomeComponent,
+    CountriesComponent,
     UsersComponent,
-    BookDetailsComponent,
-    BookCreateComponent,
-    RegisterComponent
+    CountryDetailsComponent,
+    RegisterComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

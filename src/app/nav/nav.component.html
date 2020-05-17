@@ -1,14 +1,28 @@
 <header>
-  <div class="container">
-    <a class="logo" routerLink="/">{{ appTitle }}</a>
-    <nav>
-      <ul>
-        <li><a routerLink="/">Home</a></li>
-        <li><a routerLink="/books">Engine</a></li>
-        <li><a routerLink="/users">Users</a></li>
-        <li data-target="#registerModal" data-toggle="modal"><a routerLink="/register">Register</a></li>
-        <li data-target="#bookModal" data-toggle="modal"><a routerLink="/books/create" >Add Book</a></li>
-      </ul>
-    </nav>
-  </div>
+  <nav>
+    <div class="menubar">
+      <a class="home" (click)="toggleMenu()">
+        <img alt="travel-it-logo" src="assets/img/logo.png" width="50" height="50">{{ appTitle }}
+      </a>
+      <div class="button" *ngIf="getUser() == null">
+        <a class="link" routerLink="/register">Sing Up</a>
+      </div>
+      <div class="button" *ngIf="getUser() == null">
+        <a class="link" routerLink="/login">Login</a>
+      </div>
+      <div class="button" *ngIf="getUser() != null">
+        <a class="link" (click)="logOut()">Logout</a>
+      </div>
+      <div class="icons">
+        <i class="icon-menu" (click)="toggleMenu()"><span></span></i>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="menu-link"><a class="text-item" routerLink="/about-us" (click)="toggleMenu()">About us</a></li>
+      <li class="menu-link"><a class="text-item" routerLink="/countries" (click)="toggleMenu()">Destinations</a></li>
+      <li class="menu-link"><a class="text-item" routerLink="/users" (click)="toggleMenu()">Top Users</a></li>
+      <li class="menu-link"><a class="text-item" routerLink="/contact" (click)="toggleMenu()">Contact</a></li>
+    </ul>
+  </nav>
 </header>
+

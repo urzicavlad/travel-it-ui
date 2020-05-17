@@ -20,7 +20,7 @@
 
     <!-- Title -->
     <div class="title">
-      <h1>Sign Up</h1>
+      <h1>Login</h1>
     </div>
     <!-- end Title -->
 
@@ -28,26 +28,13 @@
     <div class="left">
       <div class="content">
         <h2 class="subtitle">Please fill out the form to create an account</h2>
-        <form [formGroup]="USER_FORM" (ngSubmit)="onSubmit()">
-
+        <div class="alert alert-danger" id="login-alert" role="alert" hidden="true">
+          Invalid Credentials
+        </div>
+        <form [formGroup]="LOGIN_FORM" (ngSubmit)="onSubmit()">
           <div class="input-wrapper" (keypress)="animeInput($event)">
             <label for="username">Username</label>
             <input class="form-control" formControlName="username" id="username" name="username" type="text">
-          </div>
-
-          <div class="input-wrapper" (keypress)="animeInput($event)">
-            <label for="firstName">First Name</label>
-            <input class="form-control" formControlName="firstName" id="firstName" name="firstName" type="text">
-          </div>
-
-          <div class="input-wrapper" (keypress)="animeInput($event)">
-            <label for="lastName">Last Name</label>
-            <input class="form-control" formControlName="lastName" id="lastName" name="lastName" type="text">
-          </div>
-
-          <div class="input-wrapper" (keypress)="animeInput($event)">
-            <label for="email">E-mail</label>
-            <input class="form-control" formControlName="email" id="email" name="email" type="email">
           </div>
 
           <div class="input-wrapper" (keypress)="animeInput($event)">
@@ -56,16 +43,17 @@
           </div>
 
         </form>
-
-        <button routerLink="/" (click)="register()" class="btn">Create Account</button>
+        <button class="btn" (click)="login()">Login</button>
       </div>
 
     </div>
     <!-- end Left Container -->
 
     <!-- Right Container -->
-    <div class="right"></div>
+    <div class="right">
+    </div>
     <!-- end Right Container -->
+
   </div>
 </div>
 

@@ -1,6 +1,9 @@
 class User {
-  id: String;
-  first_name: String;
-  last_name: String;
-  avatar: String;
+  id: string;
+  username: string;
+  firstName: string;
+  lastName: string;
+  email: string;
+  password: string;
+  avatar: string;
 }

@@ -7,13 +7,17 @@ import {Observable} from 'rxjs';
 })
 export class UserDataService {
 
-  private USERS_API = 'https://reqres.in/api/users/';
+  private USERS_API = 'http://localhost:8080/api/users';
 
   constructor(private http: HttpClient) {
   }
 
-  getAllUsers(): Observable<User[]> {
+  getAll(): Observable<User[]> {
     return this.http.get<Array<User>>(this.USERS_API);
+  }
+
+  save(user: User) {
+    return this.http.post<User>(this.USERS_API, user);
   }
 
 }

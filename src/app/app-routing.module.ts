@@ -1,20 +1,18 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-import {HomeComponent} from './home/home.component';
-import {BooksComponent} from './books/books.component';
 import {UsersComponent} from './users/users.component';
-import {BookDetailsComponent} from './book-details/book-details.component';
-import {BookCreateComponent} from './book-create/book-create.component';
 import {RegisterComponent} from './register/register.component';
+import {CountriesComponent} from './countries/countries.component';
+import {CountryDetailsComponent} from './country-details/country-details.component';
+import {LoginComponent} from './login/login.component';
 
 
 const routes: Routes = [
-  {path: '', component: HomeComponent},
-  {path: 'books', component: BooksComponent},
-  {path: 'books/create', component: BookCreateComponent},
-  {path: 'books/:id', component: BookDetailsComponent},
+  {path: 'countries', component: CountriesComponent},
+  {path: 'countries/:id', component: CountryDetailsComponent},
   {path: 'users', component: UsersComponent},
   {path: 'register', component: RegisterComponent},
+  {path: 'login', component: LoginComponent},
 ];
 
 @NgModule({
