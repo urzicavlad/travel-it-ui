@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Location} from '@angular/common';
-import {AuthorizeDataService} from '../api/authorize-data.service';
+import {AuthorizeService} from '../services/authorize.service';
 import {CookieUtilsService} from '../common/cookie-utils-service';
 
 @Component({
@@ -11,7 +11,7 @@ import {CookieUtilsService} from '../common/cookie-utils-service';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private authorizeDataService: AuthorizeDataService, private cookieUtilsService: CookieUtilsService,
+  constructor(private authorizeDataService: AuthorizeService, private cookieUtilsService: CookieUtilsService,
               private formBuilder: FormBuilder, private location: Location) {
     this.LOGIN_FORM = this.formBuilder.group({
       username: ['', Validators.required],

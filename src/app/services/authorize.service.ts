@@ -4,7 +4,7 @@ import {HttpClient} from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
-export class AuthorizeDataService {
+export class AuthorizeService {
 
   private AUTHORIZE_API = 'http://localhost:8080/api/authorize';
 

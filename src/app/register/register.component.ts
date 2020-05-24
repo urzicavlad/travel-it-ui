@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {Location} from '@angular/common';
-import {UserDataService} from '../api/user-data.service';
+import {UserService} from '../services/user.service';
 
 @Component({
   selector: 'app-register',
@@ -16,7 +16,7 @@ export class RegisterComponent implements OnInit {
   private SUCCESS_SAVED: boolean;
   private ERROR_OCCURRED: boolean;
 
-  constructor(private userDataService: UserDataService, private formBuilder: FormBuilder, private location: Location) {
+  constructor(private userDataService: UserService, private formBuilder: FormBuilder, private location: Location) {
     this.USER_FORM = this.formBuilder.group({
       username: ['', Validators.required],
       firstName: ['', Validators.required],

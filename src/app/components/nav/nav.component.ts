@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {CookieUtilsService} from '../common/cookie-utils-service';
+import {CookieUtilsService} from '../../common/cookie-utils-service';
 
 @Component({
   selector: 'app-nav',
