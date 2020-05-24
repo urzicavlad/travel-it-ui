@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Location} from '@angular/common';
 import {AuthorizeService} from '../services/authorize.service';
-import {CookieUtilsService} from '../common/cookie-utils-service';
+import {CookieUtilsService} from '../services/cookie-utils-service';
 
 @Component({
   selector: 'app-register',
