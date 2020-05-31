@@ -7,7 +7,7 @@ import {AppComponent} from './app.component';
 import {NavComponent} from './components/nav/nav.component';
 import {UsersComponent} from './users/users.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {RegisterComponent} from './register/register.component';
+import {RegisterComponent} from './components/register/register.component';
 import {LoginComponent} from './login/login.component';
 import {HomeComponent} from './home/home.component';
 import {AccountComponent} from './account/account.component';
@@ -38,7 +38,7 @@ import {CityItemComponent} from './components/city-item/city-item.component';
     CitiesComponent,
     CountryDetailComponent,
     CityDetailComponent,
-    CityItemComponent
+    CityItemComponent,
   ],
   imports: [
     BrowserModule,

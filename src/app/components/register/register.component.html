@@ -1,0 +1,91 @@
+<div class="modal open">
+  <div class="wrapper">
+    <div class="btn-close" routerLink="/" (click)="closeModal()">X</div>
+
+    <!-- Title -->
+    <div class="title"><h1>Sign Up</h1></div>
+    <!-- end Title -->
+
+    <!-- Left Container -->
+    <div class="left">
+      <div class="content">
+
+        <div *ngIf="submitted && serverErrorOccurred" class="alert alert-danger" role="alert">
+          {{serverErrorMessage}}
+        </div>
+
+        <div *ngIf="usernameExists" class="alert alert-info" role="alert">
+          Username exists!
+        </div>
+
+        <div *ngIf="validationFocus && errors" class="alert alert-danger" role="alert">
+          {{message}}
+        </div>
+
+        <form [formGroup]="registerForm" autocomplete="off">
+
+          <div class="input-wrapper" (keypress)="animeInput($event)">
+            <label for="username">Username</label>
+            <input class="form-control"
+                   formControlName="username" id="username"
+                   name="username" type="text"
+                   [ngClass]="getFeedbackField('username')"
+                   (keyup)="showValidation('username')"
+                   (change)="callForUser($event.target.value)"
+            />
+          </div>
+
+          <div class="input-wrapper" (keypress)="animeInput($event)">
+            <label for="firstName">First Name</label>
+            <input class="form-control" formControlName="firstName" id="firstName"
+                   name="firstName" type="text"
+                   [ngClass]="getFeedbackField('firstName')"
+                   (keyup)="showValidation('firstName')">
+          </div>
+
+          <div class="input-wrapper" (keypress)="animeInput($event)">
+            <label for="lastName">Last Name</label>
+            <input class="form-control" formControlName="lastName" id="lastName"
+                   name="lastName" type="text"
+                   [ngClass]="getFeedbackField('lastName')"
+                   (keyup)="showValidation('lastName')">
+          </div>
+
+          <div class="input-wrapper" (keypress)="animeInput($event)">
+            <label for="email">E-mail</label>
+            <input class="form-control" formControlName="email" id="email"
+                   name="email" type="email"
+                   [ngClass]="getFeedbackField('email')"
+                   (keyup)="showValidation('email')">
+          </div>
+
+          <div class="input-wrapper" (keypress)="animeInput($event)">
+            <label for="password">Password</label>
+            <input class="form-control" formControlName="password" id="password"
+                   name="password" type="password"
+                   [ngClass]="getFeedbackField('password')"
+                   (keyup)="showValidation('password')">
+          </div>
+
+          <div class="input-wrapper" (keypress)="animeInput($event)">
+            <label for="confirmPassword">Confirm Password</label>
+            <input class="form-control" formControlName="confirmPassword" id="confirmPassword"
+                   name="confirmPassword" type="password"
+                   [ngClass]="getFeedbackField('confirmPassword')"
+                   (keyup)="showValidation('confirmPassword')">
+          </div>
+
+        <button type=submit (click)="onSubmit()" class="btn">Create Account <i class="fa fa-spinner fa-spin" *ngIf="loading"></i></button>
+        </form>
+
+
+      </div>
+
+    </div>
+    <!-- end Left Container -->
+
+    <!-- Right Container -->
+    <div class="right"></div>
+    <!-- end Right Container -->
+  </div>
+</div>

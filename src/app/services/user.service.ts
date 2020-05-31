@@ -20,4 +20,7 @@ export class UserService {
     return this.http.post<User>(this.USERS_API, user);
   }
 
+  userExists(username: string) {
+    return this.http.head<void>(this.USERS_API.concat(`/${username}`));
+  }
 }
