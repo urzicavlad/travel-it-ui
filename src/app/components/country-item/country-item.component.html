@@ -1,0 +1,13 @@
+<div class="card" (click)="openCard()">
+  <article>
+    <span class="close" (click)="closeCard($event)">x</span>
+    <h2>{{country.name}}</h2>
+    <div class="pic">
+      <img alt="{{country.name}}"
+           src="{{country.image}}"
+           width="450" height="300">
+    </div>
+    <div class="desc">{{country.description}}
+    </div>
+  </article>
+</div>

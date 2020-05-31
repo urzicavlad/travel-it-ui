@@ -1,0 +1,11 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,400i,700");
+@import url("https://fonts.googleapis.com/css?family=Barlow:300,400,500,600,700&display=swap");
+
+$font: "Barlow", sans-serif;
+
+.cards {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

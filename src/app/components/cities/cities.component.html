@@ -1,0 +1,11 @@
+<div>
+  <p *ngIf="cities.length == 0"> No cities in our Application :(</p>
+</div>
+
+<div id="cities" class="carousel slide" data-ride="carousel">
+  <app-city-item *ngFor="let city of cities" class="cards"
+                    [city]="city">
+  </app-city-item>
+</div>
+
+

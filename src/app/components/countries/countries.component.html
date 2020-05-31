@@ -1,0 +1,18 @@
+<div class="pt-5">
+  <!--Cards-->
+  <div *ngIf="page" class="d-flex pt-5 justify-content-center">
+    <div class="card-columns">
+      <div>
+        <p *ngIf="page.totalElements == 0"> No countries in our Application :(</p>
+      </div>
+        <app-country-item *ngFor="let country of page.content" class="cards"
+                          [country]="country">
+        </app-country-item>
+    </div>
+  </div>
+</div>
+<app-pagination [page] = "page"
+                [api]="api"
+                (updatePage)="onPageUpdate($event)">
+</app-pagination>
+
