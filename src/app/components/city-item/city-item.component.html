@@ -1,6 +1,7 @@
-<div class="card">
+<div class="card" (click)="openCard()">
   <article>
-    <h3>{{city.name}}</h3>
-    <button>Recommendations</button>
+    <span class="close" (click)="closeCard($event)"></span>
+    <h2>{{city.name}}</h2>
+    <div class="desc">{{city.description}}</div>
   </article>
 </div>

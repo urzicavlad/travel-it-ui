@@ -23,9 +23,6 @@
         <a class="link" routerLink="/users">Top Users</a>
       </div>
       <div class="button" *ngIf="getUser() != null">
-        <a class="link" routerLink="/contact">Contact</a>
-      </div>
-      <div class="button" *ngIf="getUser() != null">
         <a class="link" routerLink="/account">Account</a>
       </div>
       <div class="button" *ngIf="getUser() != null">
@@ -39,7 +36,7 @@
       <li class="menu-link"><a class="text-item" routerLink="/about-us" (click)="toggleMenu()">About us</a></li>
       <li class="menu-link"><a class="text-item" routerLink="/countries" (click)="toggleMenu()">Destinations</a></li>
       <li class="menu-link"><a class="text-item" routerLink="/users" (click)="toggleMenu()">Top Users</a></li>
-      <li class="menu-link"><a class="text-item" routerLink="/contact" (click)="toggleMenu()">Contact</a></li>
+      <li class="menu-link"><a class="text-item" routerLink="/login" (click)="toggleMenu()">Login</a></li>
     </ul>
   </nav>
 </header>

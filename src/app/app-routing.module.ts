@@ -9,6 +9,7 @@ import {AboutUsComponent} from './about-us/about-us.component';
 import {CountriesComponent} from './components/countries/countries.component';
 import {CitiesComponent} from './components/cities/cities.component';
 import {CountryDetailComponent} from './components/country-detail/country-detail.component';
+import {CityDetailComponent} from './components/city-detail/city-detail.component';
 
 
 const routes: Routes = [
@@ -16,6 +17,7 @@ const routes: Routes = [
   {path: 'countries', component: CountriesComponent},
   {path: 'countries/:id', component: CountryDetailComponent},
   {path: 'cities', component: CitiesComponent},
+  {path: 'cities/:id', component: CityDetailComponent},
   {path: 'about-us', component: AboutUsComponent},
   {path: 'account', component: AccountComponent},
   {path: 'users', component: UsersComponent},

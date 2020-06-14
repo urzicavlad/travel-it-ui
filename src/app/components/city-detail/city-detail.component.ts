@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {City} from '../../models/city.model';
+import {Router} from '@angular/router';
+import {RecommendationService} from '../../services/recommendation.service';
 
 @Component({
   selector: 'app-city-detail',
@@ -7,9 +10,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CityDetailComponent implements OnInit {
 
-  constructor() { }
+  public city: City;
+  public recommendations: Recommendation[];
+
+  constructor(private router: Router, private recommendationService: RecommendationService) {
+    this.city = this.router.getCurrentNavigation().extras.state as City;
+  }
 
   ngOnInit() {
+    this.recommendationService.getByCityName(this.city.name).subscribe(recommendations => {
+      this.recommendations = recommendations;
+    });
   }
 
 }
