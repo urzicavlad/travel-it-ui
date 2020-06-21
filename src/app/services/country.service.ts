@@ -21,6 +21,10 @@ export class CountryService {
     return this.http.get<Country>(this.countriesApi.concat(id));
   }
 
+  getByName(countryName: string): Observable<Country> {
+    return this.http.get<Country>(this.countriesApi.concat(`filter?name=${countryName}`));
+  }
+
   save(country: Country) {
     return this.http.post<Country>(this.countriesApi, country);
   }

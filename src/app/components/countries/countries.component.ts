@@ -1,5 +1,7 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {Country} from '../../models/country.model';
+import {CountryService} from '../../services/country.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-countries',
@@ -10,8 +12,10 @@ export class CountriesComponent implements OnInit {
 
   page: Page<Country>;
   api = 'http://localhost:8080/api/countries/';
+  @ViewChild('searchValue', {static: true}) searchValue: ElementRef;
 
-  constructor() {}
+  constructor(private countryService: CountryService, private router: Router) {
+  }
 
   ngOnInit(): void {
   }
@@ -20,4 +24,15 @@ export class CountriesComponent implements OnInit {
     this.page = page;
   }
 
+  goToCountry() {
+    const sv = this.searchValue.nativeElement.value;
+    console.log(sv);
+    this.countryService.getByName(sv).subscribe(country => {
+      console.log(country);
+      this.router.navigate(['/countries/', country.id], {state: country})
+        .then(e => console.log(e));
+    }, error => {
+      alert(error.error.message);
+    });
+  }
 }
