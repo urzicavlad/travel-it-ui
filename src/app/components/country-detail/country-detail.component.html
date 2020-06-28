@@ -1,7 +1,9 @@
-<div>
-  <h1>{{country.name}}</h1>
-  <h3>{{country.description}}</h3>
-
-  <app-cities [country]="country"></app-cities>
+<div class="description">
+  <div>
+    <h1 class="country-name">{{country.name}}</h1>
+    <h4 class="country-description">{{country.description}}</h4>
+    <br>
+    <h1 class="country-name">Great cities to visit</h1>
+    <app-cities [country]="country"></app-cities>
+  </div>
 </div>
-
