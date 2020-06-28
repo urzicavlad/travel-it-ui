@@ -31,20 +31,14 @@ div {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
-#leftbox {
-  float:left;
-  width:800px;
-  margin-left: 150px;
-
+#admin {
+  width: 830px;
+  margin-left: 25%;
 }
 #middlebox{
+  margin-left: 25%;
   float:left;
-  width:900px;
-  margin-left: -400px;
-
 }
 #rightbox{
-  float:right;
-  width:900px;
-  margin-left: -600px;
+  float:left;
 }
