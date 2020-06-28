@@ -23,6 +23,7 @@ export class AccountComponent implements OnInit {
   roleWasChanged = false;
   countryWasAdded = false;
   cityWasAdded = false;
+  recWasAdded = false;
 
   constructor(public cookieUtilsService: CookieUtilsService,
               public userService: UserService,
@@ -92,7 +93,10 @@ export class AccountComponent implements OnInit {
     recommendation.description = reccDesc.value;
     recommendation.cityName = cityName.value;
     recommendation.countryName = countryName.value;
-    this.recommendationService.save(recommendation).subscribe(e => console.log(e));
+    this.recommendationService.save(recommendation).subscribe(e => {
+      console.log(e);
+      this.recWasAdded = true;
+    });
   }
 
   callCity(countryName) {

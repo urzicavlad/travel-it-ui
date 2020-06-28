@@ -108,8 +108,8 @@
       </select><br>
       <label for="cityCountryName">Description</label>
       <textarea #reccDesc id="reccDesc"></textarea><br>
-      <div *ngIf="cityWasAdded" class="alert alert-success" role="alert">
-        City was saved!
+      <div *ngIf="recWasAdded" class="alert alert-success" role="alert">
+        Recommendation was saved!
       </div>
       <input type="submit" value="Submit" (click)="onRecommendationSubmit(landmark, countryName, cityName, reccDesc)">
     </form>
