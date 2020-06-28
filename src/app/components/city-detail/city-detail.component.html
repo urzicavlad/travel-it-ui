@@ -1,9 +1,13 @@
 <app-nav></app-nav>
-<div class="card" *ngFor="let recommendation of recommendations">
-  <article>
-    <span class="close"></span>
-    <h2>{{recommendation.name}}</h2>
-    <div class="desc">{{recommendation.description}}</div>
-    <div class="desc">{{recommendation.address}}</div>
-  </article>
+<div class="main">
+  <h1 class="title">Great places to visit</h1>
+  <br>
+  <div class="card" *ngFor="let recommendation of recommendations">
+    <article>
+      <span class="close"></span>
+      <h2>{{recommendation.name}}</h2>
+      <div class="desc">{{recommendation.description}}</div>
+      <div class="desc">{{recommendation.address}}</div>
+    </article>
+  </div>
 </div>
