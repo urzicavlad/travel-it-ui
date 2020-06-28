@@ -28,4 +28,10 @@ export class UserService {
     return this.http.get<User>(`${this.USERS_API}/filter?username=${username}`);
   }
 
+  updateRole(username: string, role: string) {
+    this.getByUsername(username).subscribe(user => {
+       this.http.put<User>(`${this.USERS_API}/${user.id}`, role);
+    });
+  }
+
 }

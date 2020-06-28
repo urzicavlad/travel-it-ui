@@ -26,7 +26,7 @@
         <a class="link" routerLink="/account">Account</a>
       </div>
       <div class="button" *ngIf="getUser() != null">
-        <a class="link" (click)="logOut()">Logout</a>
+        <a class="link" (click)="logOut()" routerLink="/">Logout</a>
       </div>
       <div class="icons">
         <i class="icon-menu" (click)="toggleMenu()"><span></span></i>
