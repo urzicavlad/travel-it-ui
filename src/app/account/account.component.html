@@ -1,6 +1,9 @@
 <app-nav></app-nav>
+<br>
+<br>
+<br>
 <div class="pt-5">
-  <h2>User Details</h2>
+  <h2>User Details</h2><br>
   <table class="table">
     <tr>
       <th>Username</th>
@@ -21,9 +24,7 @@
 
 <div *ngIf="user.role != null && user.role == 'ADMIN'">
 
-  <br><br><h1 class="admin">ADMIN VIEW</h1><br><br>
-
-  <div class="container">
+  <div id="leftbox" class="container">
     <h3 class="title">Change user role</h3>
     <br>
     <br>
@@ -45,7 +46,7 @@
     </form>
   </div>
 
-  <div class="container">
+  <div id="middlebox" class="container">
     <h3 class="title">Add a country</h3>
     <br>
     <br>
@@ -64,7 +65,7 @@
     </form>
   </div>
 
-  <div class="container">
+  <div id="rightbox" class="container">
     <h3 class="title">Add a City</h3>
     <br>
     <br>
@@ -83,13 +84,6 @@
       </div>
       <input type="submit" value="Submit" (click)="onCitySubmit(cityName, cityCountryName, cityDesc)">
     </form>
-  </div>
-
-  <div class="container">
-    <h3 class="title">Add a Recommendation</h3>
-    <br>
-    <br>
-    <br>
   </div>
 
 </div>
