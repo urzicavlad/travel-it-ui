@@ -1,4 +1,7 @@
 <app-nav></app-nav>
+
+<body>
+
 <br>
 <br>
 <br>
@@ -24,7 +27,7 @@
 
 <div *ngIf="user.role != null && user.role == 'ADMIN'">
 
-  <div id="leftbox" class="container">
+  <div id="admin">
     <h3 class="title">Change user role</h3>
     <br>
     <br>
@@ -43,7 +46,7 @@
     </form>
   </div>
 
-  <div id="middlebox" class="container">
+  <div id="middlebox">
     <h3 class="title">Add a country</h3>
     <br>
     <br>
@@ -59,7 +62,7 @@
     </form>
   </div>
 
-  <div id="rightbox" class="container">
+  <div id="rightbox">
     <h3 class="title">Add a City</h3>
     <br>
     <br>
@@ -78,3 +81,4 @@
   </div>
 
 </div>
+</body>
