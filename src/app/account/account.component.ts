@@ -40,7 +40,7 @@ export class AccountComponent implements OnInit {
       }
     );
     this.userService.getAll().subscribe(users => {
-      this.usernames = users.map(c => c.username);
+      this.usernames = users.map(c => c.username).filter(un => un !== username);
       console.log(this.usernames);
     });
   }

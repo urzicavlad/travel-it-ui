@@ -7,14 +7,14 @@
       <div class="button">
         <a class="link" routerLink="/">Home</a>
       </div>
+      <div class="button">
+        <a class="link" routerLink="/about-us">About us</a>
+      </div>
       <div class="button" *ngIf="getUser() == null">
         <a class="link" routerLink="/register">Sing Up</a>
       </div>
       <div class="button" *ngIf="getUser() == null">
         <a class="link" routerLink="/login">Login</a>
-      </div>
-      <div class="button" *ngIf="getUser() != null">
-        <a class="link" routerLink="/about-us">About us</a>
       </div>
       <div class="button" *ngIf="getUser() != null">
         <a class="link" routerLink="/countries">Destinations</a>
