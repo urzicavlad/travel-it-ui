@@ -1,4 +1,40 @@
 <app-nav></app-nav>
 <div class="pt-5">
-  <h1 class="pt-5">Here will user settings!</h1>
+  <h1 class="pt-5">Username: {{user.username}}</h1>
+  <h1 class="pt-5">Role: {{user.role}}</h1>
+  <h1 class="pt-5">Email: {{user.email}}</h1>
+  <h1 class="pt-5">First Name: {{user.firstName}}</h1>
+  <h1 class="pt-5">Last Name: {{user.lastName}}</h1>
+</div>
+
+<div *ngIf="user.role != null && user.role == 'ADMIN'">
+
+  <h1>ADMIN VIEW</h1><br><br>
+
+  <div>
+    <h5>Add a country</h5>
+    <form>
+      <label for="countryName">Name</label>
+      <input #countryName id="countryName" type="text"><br>
+      <label for="imageUrl">Image URL</label>
+      <input #imageUrl id="imageUrl" type="text"><br>
+      <label for="countryDesc">Description</label>
+      <textarea #countryDesc id="countryDesc"></textarea><br>
+      <input type="submit" value="Submit" (click)="onCountrySubmit(countryName, imageUrl, countryDesc)">
+    </form>
+  </div>
+
+  <div>
+    <h5>Add a City</h5>
+    <form>
+      <label for="countryName">Name</label>
+      <input #cityName id="cityName" type="text"><br>
+      <label for="cityCountryName">Country name</label>
+      <input #cityCountryName id="cityCountryName" type="text"><br>
+      <label for="cityCountryName">Description</label>
+      <textarea #cityDesc id="cityDesc"></textarea><br>
+      <input type="submit" value="Submit" (click)="onCitySubmit(cityName, cityCountryName, cityDesc)">
+    </form>
+  </div>
+
 </div>

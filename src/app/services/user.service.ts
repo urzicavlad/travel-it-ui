@@ -23,4 +23,9 @@ export class UserService {
   userExists(username: string) {
     return this.http.head<void>(this.USERS_API.concat(`/${username}`));
   }
+
+  getByUsername(username: string): Observable<User> {
+    return this.http.get<User>(`${this.USERS_API}/filter?username=${username}`);
+  }
+
 }

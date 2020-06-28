@@ -16,7 +16,7 @@ export class RecommendationService {
   }
 
   getAll(): Observable<City[]> {
-    return this.http.get<Array<Recommendation>>(this.recommendationsApi);
+    return this.http.get<Array<City>>(this.recommendationsApi);
   }
 
   getById(recommendationId: number): Observable<Country> {
