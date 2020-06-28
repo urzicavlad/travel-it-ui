@@ -27,13 +27,15 @@
     <h5>Change user role</h5>
     <form>
       <label for="username">Username</label>
-      <input #username id="username" type="text"><br>
+      <select #username name="username" id="username">
+        <option *ngFor="let uname of usernames" value="{{uname}}">{{uname}}</option>
+      </select><br>
       <label for="role">Role</label>
       <input #role id="role" type="text"><br>
       <input type="submit" value="Submit" (click)="onChangeUserRoleSubmit(username, role)">
     </form>
   </div>
-
+  <br><br><br><br>
   <div>
     <h5>Add a country</h5>
     <form>
@@ -55,7 +57,7 @@
       <label for="cityCountryName">Country name</label>
       <select #cityCountryName name="cityCountryName" id="cityCountryName">
         <option *ngFor="let cname of countryNames" value="{{cname}}">{{cname}}</option>
-      </select>
+      </select><br>
       <label for="cityCountryName">Description</label>
       <textarea #cityDesc id="cityDesc"></textarea><br>
       <input type="submit" value="Submit" (click)="onCitySubmit(cityName, cityCountryName, cityDesc)">

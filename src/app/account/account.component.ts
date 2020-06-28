@@ -16,6 +16,7 @@ export class AccountComponent implements OnInit {
   user: User;
 
   countryNames: string[];
+  usernames: string[];
 
   constructor(public cookieUtilsService: CookieUtilsService,
               public userService: UserService,
@@ -35,6 +36,10 @@ export class AccountComponent implements OnInit {
         console.log(this.countryNames);
       }
     );
+    this.userService.getAll().subscribe(users => {
+      this.usernames = users.map(c => c.username);
+      console.log(this.usernames);
+    });
   }
 
   onCountrySubmit(countryName: HTMLInputElement, imageUrl: HTMLInputElement, countryDesc: HTMLTextAreaElement) {
