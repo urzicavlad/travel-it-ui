@@ -1,8 +1,35 @@
 <app-nav></app-nav>
-<div class="container pt-5">
-  <ul class="pt-5" *ngIf="users">
-    <li *ngFor="let user of users">
-      <p>Username: {{ user.username }}</p>
-    </li>
-  </ul>
+<div class="pt-5 pt-5">
+  <h1 class="pt-5">We have registered {{users.length}} users!</h1>
+</div>
+<div class="row">
+  <div class="table-responsive col-md-6">
+    <table class="table">
+      <thead>
+      <tr>
+        <th scope="col">Admins</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let user of users">
+
+        <td *ngIf='user.role === "ADMIN"'>{{user.username}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="table-responsive col-md-6">
+    <table class="table">
+      <thead>
+      <tr>
+        <th scope="col">Users</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let user of users">
+        <td *ngIf='user.role === "USER"'>{{user.username}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
 </div>

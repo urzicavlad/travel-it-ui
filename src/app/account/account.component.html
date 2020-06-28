@@ -53,7 +53,9 @@
       <label for="countryName">Name</label>
       <input #cityName id="cityName" type="text"><br>
       <label for="cityCountryName">Country name</label>
-      <input #cityCountryName id="cityCountryName" type="text"><br>
+      <select #cityCountryName name="cityCountryName" id="cityCountryName">
+        <option *ngFor="let cname of countryNames" value="{{cname}}">{{cname}}</option>
+      </select>
       <label for="cityCountryName">Description</label>
       <textarea #cityDesc id="cityDesc"></textarea><br>
       <input type="submit" value="Submit" (click)="onCitySubmit(cityName, cityCountryName, cityDesc)">

@@ -30,7 +30,9 @@ export class UserService {
 
   updateRole(username: string, role: string) {
     this.getByUsername(username).subscribe(user => {
-       this.http.put<User>(`${this.USERS_API}/${user.id}`, role);
+      this.http.put<User>(`${this.USERS_API}/${user.id}`, role).subscribe(userUpdated => {
+        console.log(userUpdated);
+      });
     });
   }
 

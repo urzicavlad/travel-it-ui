@@ -15,6 +15,8 @@ export class AccountComponent implements OnInit {
 
   user: User;
 
+  countryNames: string[];
+
   constructor(public cookieUtilsService: CookieUtilsService,
               public userService: UserService,
               public countryService: CountryService,
@@ -28,6 +30,11 @@ export class AccountComponent implements OnInit {
       this.user = user;
       console.log(JSON.stringify(this.user));
     });
+    this.countryService.getAll().subscribe(countries => {
+        this.countryNames = countries.map(c => c.name);
+        console.log(this.countryNames);
+      }
+    );
   }
 
   onCountrySubmit(countryName: HTMLInputElement, imageUrl: HTMLInputElement, countryDesc: HTMLTextAreaElement) {
@@ -39,7 +46,7 @@ export class AccountComponent implements OnInit {
     this.countryService.save(country).subscribe(c => console.log(c));
   }
 
-  onCitySubmit(cityName: HTMLInputElement, cityCountryName: HTMLInputElement, cityDesc: HTMLTextAreaElement) {
+  onCitySubmit(cityName: HTMLInputElement, cityCountryName: HTMLSelectElement, cityDesc: HTMLTextAreaElement) {
     const city = new City();
     city.name = cityName.value;
     city.countryName = cityCountryName.value;
