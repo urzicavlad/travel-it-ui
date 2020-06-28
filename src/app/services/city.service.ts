@@ -27,7 +27,7 @@ export class CityService {
     return this.http.get<City[]>(this.citiesApi.concat(`/filter?country=${countryName}`));
   }
 
-  save(city: City) {
+  save(city: City): Observable<City> {
     return this.http.post<City>(this.citiesApi, city);
   }
 
