@@ -5,6 +5,8 @@ import {CountryService} from '../services/country.service';
 import {Country} from '../models/country.model';
 import {City} from '../models/city.model';
 import {CityService} from '../services/city.service';
+import {RecommendationService} from '../services/recommendation.service';
+import {Recommendation} from '../models/recommendation.model';
 
 @Component({
   selector: 'app-account',
@@ -16,6 +18,7 @@ export class AccountComponent implements OnInit {
   user: User;
 
   countryNames: string[];
+  cityNames: string[];
   usernames: string[];
   roleWasChanged = false;
   countryWasAdded = false;
@@ -24,7 +27,8 @@ export class AccountComponent implements OnInit {
   constructor(public cookieUtilsService: CookieUtilsService,
               public userService: UserService,
               public countryService: CountryService,
-              public cityService: CityService
+              public cityService: CityService,
+              public recommendationService: RecommendationService
   ) {
   }
 
@@ -76,6 +80,25 @@ export class AccountComponent implements OnInit {
     this.userService.updateRole(username.value, role.value).add(() => {
       this.ngOnInit();
       this.roleWasChanged = true;
+    });
+  }
+
+  onRecommendationSubmit(landmark: HTMLInputElement, countryName: HTMLInputElement | HTMLSelectElement,
+                         cityName: HTMLInputElement | HTMLSelectElement, reccDesc: HTMLTextAreaElement) {
+
+    const recommendation = new Recommendation();
+    recommendation.name = landmark.value;
+    recommendation.address = landmark.value;
+    recommendation.description = reccDesc.value;
+    recommendation.cityName = cityName.value;
+    recommendation.countryName = countryName.value;
+    this.recommendationService.save(recommendation).subscribe(e => console.log(e));
+  }
+
+  callCity(countryName) {
+    this.cityService.getByCountryName(countryName.value).subscribe(e => {
+      console.log(e);
+      this.cityNames = e.map(a => a.name);
     });
   }
 }

@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {City} from '../../models/city.model';
 import {Router} from '@angular/router';
 import {RecommendationService} from '../../services/recommendation.service';
+import {Recommendation} from '../../models/recommendation.model';
 
 @Component({
   selector: 'app-city-detail',

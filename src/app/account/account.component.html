@@ -88,6 +88,31 @@
       <input type="submit" value="Submit" (click)="onCitySubmit(cityName, cityCountryName, cityDesc)">
     </form>
   </div>
+</div>
 
+<div *ngIf="user.role != null && user.role == 'USER'">
+  <div>
+    <h3 >Add a Recommendation</h3>
+    <br>
+    <br>
+    <br>
+    <form>
+      <label for="landmark">Name</label>
+      <input #landmark id="landmark" type="text"><br>
+      <label for="reccCountryName">Country name</label>
+      <select #countryName name="reccCountryName" id="reccCountryName" (change)="callCity(countryName)">
+        <option *ngFor="let cname of countryNames" value="{{cname}}">{{cname}}</option>
+      </select><br>
+      <select #cityName name="reccCityName" id="reccCityName">
+        <option *ngFor="let cname of cityNames" value="{{cname}}">{{cname}}</option>
+      </select><br>
+      <label for="cityCountryName">Description</label>
+      <textarea #reccDesc id="reccDesc"></textarea><br>
+      <div *ngIf="cityWasAdded" class="alert alert-success" role="alert">
+        City was saved!
+      </div>
+      <input type="submit" value="Submit" (click)="onRecommendationSubmit(landmark, countryName, cityName, reccDesc)">
+    </form>
+  </div>
 </div>
 </body>
