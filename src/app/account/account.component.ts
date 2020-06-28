@@ -17,6 +17,9 @@ export class AccountComponent implements OnInit {
 
   countryNames: string[];
   usernames: string[];
+  roleWasChanged = false;
+  countryWasAdded = false;
+  cityWasAdded = false;
 
   constructor(public cookieUtilsService: CookieUtilsService,
               public userService: UserService,
@@ -48,7 +51,11 @@ export class AccountComponent implements OnInit {
     country.image = imageUrl.value;
     country.description = countryDesc.value;
     console.log(JSON.stringify(country));
-    this.countryService.save(country).subscribe(c => console.log(c));
+    this.countryService.save(country).subscribe(c => {
+      console.log(c);
+      this.ngOnInit();
+      this.countryWasAdded = true;
+    });
   }
 
   onCitySubmit(cityName: HTMLInputElement, cityCountryName: HTMLSelectElement, cityDesc: HTMLTextAreaElement) {
@@ -57,12 +64,19 @@ export class AccountComponent implements OnInit {
     city.countryName = cityCountryName.value;
     city.description = cityDesc.value;
     console.log(JSON.stringify(city));
-    this.cityService.save(city).subscribe(c => console.log(c));
+    this.cityService.save(city).subscribe(c => {
+      console.log(c);
+      this.ngOnInit();
+      this.cityWasAdded = true;
+    });
   }
 
 
   onChangeUserRoleSubmit(username: HTMLSelectElement, role: HTMLSelectElement) {
-    this.userService.updateRole(username.value, role.value);
+    this.userService.updateRole(username.value, role.value).add(() => {
+      this.ngOnInit();
+      this.roleWasChanged = true;
+    });
   }
 }
 

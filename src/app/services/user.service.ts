@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {Observable} from 'rxjs';
+import {Observable, Subscription} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -28,8 +28,8 @@ export class UserService {
     return this.http.get<User>(`${this.USERS_API}/filter?username=${username}`);
   }
 
-  updateRole(username: string, role: string) {
-    this.getByUsername(username).subscribe(user => {
+  updateRole(username: string, role: string): Subscription {
+    return this.getByUsername(username).subscribe(user => {
       this.http.put<User>(`${this.USERS_API}/${user.id}`, role).subscribe(userUpdated => {
         console.log(userUpdated);
       });

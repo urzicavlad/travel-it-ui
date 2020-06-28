@@ -38,6 +38,9 @@
         <option value="ADMIN">ADMIN</option>
         <option value="USER">USER</option>
       </select>
+      <div *ngIf="roleWasChanged" class="alert alert-success" role="alert">
+        User role was changed
+      </div>
       <input type="submit" value="Submit" (click)="onChangeUserRoleSubmit(username, role)">
     </form>
   </div>
@@ -54,6 +57,9 @@
       <input #imageUrl id="imageUrl" type="text"><br>
       <label for="countryDesc">Description</label>
       <textarea #countryDesc id="countryDesc"></textarea><br>
+      <div *ngIf="countryWasAdded" class="alert alert-success" role="alert">
+        Country was saved!
+      </div>
       <input type="submit" value="Submit" (click)="onCountrySubmit(countryName, imageUrl, countryDesc)">
     </form>
   </div>
@@ -72,6 +78,9 @@
       </select><br>
       <label for="cityCountryName">Description</label>
       <textarea #cityDesc id="cityDesc"></textarea><br>
+      <div *ngIf="cityWasAdded" class="alert alert-success" role="alert">
+        City was saved!
+      </div>
       <input type="submit" value="Submit" (click)="onCitySubmit(cityName, cityCountryName, cityDesc)">
     </form>
   </div>
