@@ -21,23 +21,32 @@
 
 <div *ngIf="user.role != null && user.role == 'ADMIN'">
 
-  <br><br><h1>ADMIN VIEW</h1><br><br>
+  <br><br><h1 class="admin">ADMIN VIEW</h1><br><br>
 
-  <div>
-    <h5>Change user role</h5>
+  <div class="container">
+    <h3 class="title">Change user role</h3>
+    <br>
+    <br>
+    <br>
     <form>
       <label for="username">Username</label>
       <select #username name="username" id="username">
         <option *ngFor="let uname of usernames" value="{{uname}}">{{uname}}</option>
       </select><br>
       <label for="role">Role</label>
-      <input #role id="role" type="text"><br>
+      <select #role name="role" id="role">
+        <option value="ADMIN">ADMIN</option>
+        <option value="USER">USER</option>
+      </select>
       <input type="submit" value="Submit" (click)="onChangeUserRoleSubmit(username, role)">
     </form>
   </div>
-  <br><br><br><br>
-  <div>
-    <h5>Add a country</h5>
+
+  <div class="container">
+    <h3 class="title">Add a country</h3>
+    <br>
+    <br>
+    <br>
     <form>
       <label for="countryName">Name</label>
       <input #countryName id="countryName" type="text"><br>
@@ -48,9 +57,12 @@
       <input type="submit" value="Submit" (click)="onCountrySubmit(countryName, imageUrl, countryDesc)">
     </form>
   </div>
-  <br><br><br><br>
-  <div>
-    <h5>Add a City</h5>
+
+  <div class="container">
+    <h3 class="title">Add a City</h3>
+    <br>
+    <br>
+    <br>
     <form>
       <label for="countryName">Name</label>
       <input #cityName id="cityName" type="text"><br>
@@ -64,11 +76,11 @@
     </form>
   </div>
 
-  <br><br><br><br>
-  <div>
-    <h5>Add a Recommendation</h5>
+  <div class="container">
+    <h3 class="title">Add a Recommendation</h3>
+    <br>
+    <br>
+    <br>
   </div>
-
-
 
 </div>

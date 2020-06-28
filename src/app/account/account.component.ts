@@ -60,7 +60,8 @@ export class AccountComponent implements OnInit {
     this.cityService.save(city).subscribe(c => console.log(c));
   }
 
-  onChangeUserRoleSubmit(username: HTMLInputElement, role: HTMLInputElement) {
+
+  onChangeUserRoleSubmit(username: HTMLSelectElement, role: HTMLSelectElement) {
     this.userService.updateRole(username.value, role.value);
   }
 }
